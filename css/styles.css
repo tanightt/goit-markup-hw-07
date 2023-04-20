@@ -4,7 +4,6 @@
 --primary-brand: #4D5AE5;
 --text-selection: #404BBF;
 --backgrount-color:#FFFFFF;
---card-set-gap: 24px;
 --accent-color: #F4F4FD;
 --footer-accent: #31D0AA;
 --customers-color: #afb1b8;
@@ -24,47 +23,14 @@ ul, ol {
 
 img {
     display: block;
-    min-width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 button {
     cursor: pointer;
     font-family: inherit;
     padding: 0;
-}
-
-.container {
-    width: 1158px;
-    padding: 0 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section {
-    padding: 120px 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--backgrount-color);
-    color: #434455;
-    line-height: 1.5;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.middle-title {
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: var(--main-color);
-    margin-bottom: 8px;
-}
-
-.text-page {
-    color: var(--text-color);
-    letter-spacing: 0.02em;
-    font-style: normal;
 }
 
 a {
@@ -79,6 +45,80 @@ a {
 
 .link {
     text-decoration: none;
+}
+
+.container {
+    max-width: 428px;
+    padding: 0 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+        padding: 0 15px;
+    }
+}
+
+.section {
+    padding: 96px 0;
+}
+
+@media screen and (min-width: 1158px) {
+    .section {
+        padding: 120px 0;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--backgrount-color);
+    color: #434455;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.middle-title {
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--main-color);
+}
+
+@media screen and (min-width: 768px) {
+    .middle-title {
+        text-align: start;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .middle-title {
+        font-weight: 500;
+        font-size: 20px;
+    }
+}
+
+.text-page {
+    font-weight: 500;
+    color: var(--text-color);
+    letter-spacing: 0.02em;
+}
+
+@media screen and (min-width: 1158px) {
+    .text-page {
+        font-weight: 400;
+    }
 }
 
 /******************************* logo */
@@ -241,21 +281,52 @@ a {
 
 .category-list {
     display: flex;
-    gap: var(--card-set-gap);
+    flex-direction: column;
+    gap: 72px;
 }
 
-.category-item {
-    width: calc((100% - 72px) / 4);
+@media screen and (min-width: 768px) {
+    .category-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 24px;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .category-list {
+        gap: 24px;
+    }
+}
+
+.category-item {}
+
+@media screen and (min-width: 768px) {
+    .category-item {
+        max-width: calc((100% - 24px) / 2);
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .category-item {
+        width: calc((100% - 72px) / 4);
+    }
 }
 
 .category-icons {
-    display: flex;
-    height: 112px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--accent-color);
+    display: none;
+}
+
+@media screen and (min-width: 1158px) {
+    .category-icons { 
+        display: flex;
+        height: 112px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--accent-color);
+     }
 }
 
 .section-title {
@@ -270,12 +341,19 @@ a {
 }
 
 .desctop-section {
-    padding-bottom: 120px;
+    display: none;
+}
+    
+@media screen and (min-width: 1158px) {
+    .desctop-section {
+        display: block;
+        padding-bottom: 120px;
+    }
 }
 
 .desctop-list {
     display: flex;
-    gap: var(--card-set-gap);
+    gap: 24px;
 }
 
 .members {
@@ -285,7 +363,7 @@ a {
 
 .member-list {
     display: flex;
-    gap: var(--card-set-gap);
+    gap: 24px;
 }
 
 .member-item {
@@ -380,7 +458,7 @@ a {
     align-items: center;
     text-align: center;
     justify-content: center;
-    gap: var(--card-set-gap);
+    gap: 24px;
 }
 
 .portfolio-button {
@@ -405,7 +483,7 @@ a {
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    column-gap: var(--card-set-gap);
+    column-gap: 24px;
     row-gap: 48px;
 }
 
