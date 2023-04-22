@@ -1041,7 +1041,13 @@ body {
 
 .mobile-tel {
     font-weight: 700;
-    font-size: 36px;
+    font-size: 28px;
+}
+
+@media screen and (min-width: 390px) {
+    .mobile-tel {
+        font-size: 36px;
+  }
 }
 
 .mobile-mail {
